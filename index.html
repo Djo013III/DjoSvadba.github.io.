@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вероника & Иван | Свадьба</title>
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --rose: #E8C4C4;
+            --green: #A8C3B0;
+            --text: #5A4A42;
+            --title-color: #dc7e76;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text);
+            line-height: 1.6;
+            background-image: url('https://i.ibb.co/Wv5zsk5s/3333333.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Стили для плавающих сердечек */
+        .heart {
+            position: fixed;
+            pointer-events: none;
+            opacity: 0;
+            animation: float 8s ease-in infinite;
+            color: var(--rose);
+            font-size: 20px;
+            user-select: none;
+            z-index: 1000;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            backdrop-filter: blur(8px);
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        .rings {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            background-image: url('https://i.ibb.co/rGtKYj56/image.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            filter: drop-shadow(0 0 5px rgba(0,0,0,0.1));
+        }
+
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem;
+            color: var(--title-color);
+            margin: 5px 0;
+            text-shadow: 1px 1px 4px rgba(255,255,255,0.8);
+        }
+
+        .date {
+            font-size: 1.3rem;
+            color: var(--title-color);
+            margin: 10px 0;
+            font-style: italic;
+            text-shadow: 1px 1px 3px rgba(255,255,255,0.7);
+        }
+
+        .divider {
+            width: 100px;
+            height: 1px;
+            background: var(--gold);
+            margin: 25px auto;
+            opacity: 0.5;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 8px;
+            padding: 25px;
+            margin: 25px auto;
+            max-width: 500px;
+            text-align: center;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            backdrop-filter: blur(2px);
+        }
+
+        .card h3 {
+            color: var(--gold);
+            margin: 0 0 15px 0;
+            font-size: 1.5rem;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.6);
+        }
+
+        .card p {
+            margin: 12px 0;
+            text-shadow: 0 0 6px rgba(255,255,255,0.6);
+        }
+
+        section {
+            padding: 30px 0;
+            border-bottom: 1px dashed rgba(168, 195, 176, 0.3);
+        }
+
+        h2 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5rem;
+            color: var(--title-color);
+            text-align: center;
+            margin: 0 0 25px 0;
+            text-shadow: 1px 1px 4px rgba(255,255,255,0.8);
+        }
+
+        .romantic-text {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        .romantic-text p {
+            margin-bottom: 20px;
+            text-shadow: 0 0 7px rgba(255,255,255,0.7);
+        }
+
+        .map {
+            height: 250px;
+            width: 100%;
+            border-radius: 6px;
+            margin-top: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            background-color: white;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0 10px;
+            color: var(--title-color);
+            font-size: 0.95rem;
+            text-shadow: 1px 1px 3px rgba(255,255,255,0.7);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 20px;
+                backdrop-filter: blur(5px);
+            }
+            h1 {
+                font-size: 2.8rem;
+            }
+            h2 {
+                font-size: 2.2rem;
+            }
+            .rings {
+                width: 100px;
+                height: 100px;
+            }
+            .heart {
+                font-size: 16px;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div id="hearts-container"></div>
+    
+    <div class="container">
+        <header>
+            <div class="rings"></div>
+            <h1>Вероника & Иван</h1>
+            <div class="date">15 сентября 2024</div>
+            <div class="divider"></div>
+        </header>
+
+        <section id="love-story">
+            <div class="romantic-text">
+                <p>Когда-то давно две случайности встретились в бесконечности Вселенной...</p>
+                <p>И эта встреча превратилась в историю, которую мы пишем каждый день. Историю, полную смеха, доверчивых взглядов и тёплых вечеров, наполненных любовью.</p>
+                <p>Теперь мы хотим, чтобы вы стали частью этой истории в самый важный её день — день, когда «я» и «ты» навсегда станут «мы».</p>
+            </div>
+        </section>
+
+        <section id="zags">
+    <h2>Регистрация</h2>
+    <div class="card">
+        <h3>Отдел ЗАГС</h3>
+        <p><i class="fas fa-map-marker-alt" style="color: var(--rose);"></i> Кострома, ул. Никитская, 96</p>
+        <p><i class="far fa-clock" style="color: var(--rose);"></i> 14 Августа 2025 в 15:00</p>
+        <p><i class="fas fa-info-circle" style="color: var(--rose);"></i> Рекомендуется прибыть заблаговременно, за 10–15 минут до начала регистрации</p>
+        <div class="map">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d410.2650658305035!2d40.96867349404719!3d57.76414366236338!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46ad501e75befe91%3A0xfbef788062e2bc4a!2z0J7RgtC00LXQuyDQl9CQ0JPQoQ!5e0!3m2!1sru!2sru!4v1747231530173!5m2!1sru!2sru" 
+                width="100%" 
+                height="250"
+                style="border:0; border-radius: 6px;"
+                allowfullscreen 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
+</section>
+
+        <section id="banquet">
+    <h2>Банкет</h2>
+    <div class="card">
+        <h3>Ресторан «Валенок»</h3>
+        <p><i class="fas fa-map-marker-alt" style="color: var(--rose);"></i> Кострома, ул. Никитская, 58-а</p>
+        <p><i class="far fa-clock" style="color: var(--rose);"></i> На согласовании</p>
+        <div class="map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2128.2410892567045!2d40.95728973026651!3d57.76330938402058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46ad4fdb868f2eb1%3A0x92ed65191efedf61!2z0JLQsNC70LXQvdC-0Lo!5e0!3m2!1sru!2sru!4v1747234642778!5m2!1sru!2sru"
+                width="100%"
+                height="250"
+                style="border:0; border-radius: 6px;"
+                allowfullscreen
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
+</section>
+
+        <section id="wedding">
+            <h2>Венчание</h2>
+            <div class="card">
+                <h3>Церковь Илии Пророка</h3>
+                <p><i class="fas fa-map-marker-alt" style="color: var(--rose);"></i> Кострома, ул. Дачная, 17-а</p>
+                <p><i class="far fa-clock" style="color: var(--rose);"></i> на согласовании, информация будет позже</p>
+                <p><i class="fas fa-info-circle" style="color: var(--rose);"></i> Для женщин: платок на голову, юбка ниже колен</p>
+               <div class="map">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d197.43368022046673!2d40.91493015988601!3d57.75494106289274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46ad50172336a0a5%3A0xb1edfc9460ede99b!2z0KbQtdGA0LrQvtCy0Ywg0JjQu9C40Lgg0J_RgNC-0YDQvtC60LA!5e0!3m2!1sru!2sru!4v1747231970790!5m2!1sru!2sru" 
+                width="100%" 
+                height="250"
+                style="border:0; border-radius: 6px;"
+                allowfullscreen 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
+</section>
+
+        <footer>
+            <p>С любовью и нетерпением ждём нашей встречи!</p>
+            <p>Информация, размещённая на сайте, носит ознакомительный характер и может быть изменена без предварительного уведомления.</p>
+            <p>Просим проверять сайт для актуальной информации время от времени</p>
+        </footer>
+    </div>
+
+    <script>
+        // Создание сердечек
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.innerHTML = '❤';
+            heart.className = 'heart';
+            
+            // Случайная позиция по горизонтали
+            heart.style.left = Math.random() * 100 + 'vw';
+            // Начальная позиция по вертикали (нижняя часть экрана)
+            heart.style.bottom = '-50px';
+            
+            // Случайный размер
+            const size = Math.random() * 20 + 10;
+            heart.style.fontSize = size + 'px';
+            
+            // Случайная продолжительность анимации
+            const duration = Math.random() * 4 + 3;
+            heart.style.animationDuration = duration + 's';
+            
+            // Случайная задержка начала анимации
+            heart.style.animationDelay = Math.random() * 2 + 's';
+            
+            document.getElementById('hearts-container').appendChild(heart);
+            
+            // Удаление сердечка после завершения анимации
+            setTimeout(() => {
+                heart.remove();
+            }, (duration + 2) * 1000);
+        }
+
+        // Запускаем создание сердечек
+        function startHearts() {
+            // Создаем первое сердечко сразу
+            createHeart();
+            
+            // Затем создаем каждые 500-1000ms
+            setInterval(createHeart, 800);
+        }
+
+        // Запускаем анимацию при загрузке страницы
+        window.onload = function() {
+            startHearts();
+            initMaps();
+        };
+
+        function initMaps() {
+            // Регистрация
+            new google.maps.Map(document.getElementById("zags-map"), {
+                center: { lat: 59.9363, lng: 30.3271 },
+                zoom: 15,
+                styles: [
+                    {
+                        "featureType": "all",
+                        "elementType": "labels.text.fill",
+                        "stylers": [{ "color": "#5A4A42" }]
+                    }
+                ]
+            });
+            
+            // Банкет
+            new google.maps.Map(document.getElementById("banquet-map"), {
+                center: { lat: 59.9441, lng: 30.3447 },
+                zoom: 15,
+                styles: [
+                    {
+                        "featureType": "all",
+                        "elementType": "labels.text.fill",
+                        "stylers": [{ "color": "#5A4A42" }]
+                    }
+                ]
+            });
+            
+            // Венчание
+            new google.maps.Map(document.getElementById("wedding-map"), {
+                center: { lat: 59.9358, lng: 30.3256 },
+                zoom: 15,
+                styles: [
+                    {
+                        "featureType": "all",
+                        "elementType": "labels.text.fill",
+                        "stylers": [{ "color": "#5A4A42" }]
+                    }
+                ]
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMaps" async defer></script>
+</body>
+</html>
